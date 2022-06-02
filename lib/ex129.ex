@@ -31,6 +31,7 @@ defmodule Ex129 do
       left = a+delta*i
       acc + simpson(f, left, left+delta)
     end)
-    :io.format "~10s : ~.6f~n", ["simpson", total * delta]
+    #:io.format "~10s : ~.6f~n", ["simpson", total * delta]
+    total*delta
   end
 end

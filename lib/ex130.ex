@@ -1,5 +1,12 @@
 defmodule Ex130 do
 
+  def sum_test(a,b) do
+    rec = sum(fn x -> x end, a, fn x -> x+1 end, b)
+    iter = sum_iter(fn x -> x end, a, fn x -> x+1 end, b)
+    [rec, iter]
+
+  end
+
   def sum(a,b) do
     sum(fn x -> x end, a, fn x -> x+1 end, b)
   end
@@ -20,10 +27,10 @@ defmodule Ex130 do
   end
 
   def iter(term, a, next, b, acc) do
-    IO.inspect([a, b, acc])
-    if a > b or a > 10 do
+    if a > b do
       acc
+    else
+      iter(term, next.(a), next, b, acc + term.(a))
     end
-    iter(term, next.(a), next, b, acc + term.(a))
   end
 end
