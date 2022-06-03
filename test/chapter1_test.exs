@@ -14,12 +14,12 @@ defmodule Chapter1 do
     assert [{_, %{is_prime: true, n: 10007}}, {_, %{is_prime: true, n: 10009}}, {_, %{is_prime: true,n: 10037}}] = Ex122.sfp(10000, 100000)
     assert [{_, %{is_prime: true, n: 100003}}, {_, %{is_prime: true, n: 100019}}, {_, %{is_prime: true,n: 100043}}] = Ex122.sfp(100000, 1000000)
     assert [{_, %{is_prime: true, n: 1000003}}, {_, %{is_prime: true, n: 1000033}}, {_, %{is_prime: true,n: 1000037}}] = Ex122.sfp(1000000, 10000000)
-  end
+  endtest/chapter1_test.exs
 
   test "Ex1.29" do
     assert Ex129.simpsons(0, 1, 100) == 0.25
   end
-
+test/chapter1_test.exs
   test "Ex1.30" do
     assert Ex130.sum_test(1,10) == [55,55]
   end
@@ -28,4 +28,7 @@ defmodule Chapter1 do
     assert Ex131.product_tests(3,6) == [360, 360]
   end
 
+  test "Ex1.32" do
+    assert Ex132.accumulate(3,6) == [18, 360, 18, 360]
+  end
 end
