@@ -1,20 +1,34 @@
 defmodule Ex132 do
+
+  @funs ~w(sum_iter product_iter sum_rec product_rec)a
+
+  def plus1(x), do: x + 1
+  def sum(x, y), do: x + y
+  def product(x,y), do: x * y
+  def sum_iter(a,b), do: accumulate_iter(a, b,fn x -> x+1 end, fn x,y -> x + y end, 0)
+  def product_iter(a,b), do: accumulate_iter(a, b, fn x -> x+1 end, fn x,y -> x * y end, 1)
+  def sum_rec(a,b), do: accumulate_rec(a, b, 0, fn x -> x+1 end, fn x,y -> x + y end)
+  def product_rec(a,b), do: accumulate_rec(a, b, 1, fn x -> x+1 end, fn x,y -> x * y end)
+
   def accumulate(a,b) do
-    plus1 = &(&1 + 1)
-    sum = &(&1 + &2)
-    product = &(&1 * &2)
-    sum_iter = accumulate_iter(a, b, plus1, &(&1 + &2), 0)
-    product_iter = accumulate_iter(a, b, plus1, &(&1 * &2), 1)
-    sum_rec = accumulate_rec(a, b, 0, plus1, sum)
-    product_rec = accumulate_rec(a, b, 1, plus1, product)
-    [sum_iter, product_iter, sum_rec, product_rec]
+    Enum.each(@funs, fn fun ->
+      IO.inspect(fun)
+      IO.inspect(apply(Ex132, fun, [a,b]))
+    end)
+  end
+
+  def test(a,b) do
+    Enum.map(@funs, fn fun ->
+      apply(Ex132, fun, [a,b])
+    end)
   end
 
   def accumulate_rec(a,b, terminator, next, operation) do
     if a > b do
       terminator
+    else
+      operation.(a, accumulate_rec(next.(a), b, terminator, next, operation))
     end
-    operation.(a, accumulate_rec(next.(a), b, terminator, next, operation))
   end
 
   def accumulate_iter(a, b, next, operation, acc) do
