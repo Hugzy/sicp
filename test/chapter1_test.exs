@@ -31,4 +31,18 @@ defmodule Chapter1 do
   test "Ex1.32" do
     assert Ex132.test(3,6) == [18, 360, 18, 360]
   end
+
+  @doc """
+  Compute sum of even integers for 1 -> 10
+  """
+  test "Ex1.33" do
+    plus1 = fn x -> x + 1 end
+    sum = fn x,y -> x + y end
+    evens = fn x -> rem(x, 2) == 0 end
+    assert Ex133.filter_reduce(1, 10, plus1, sum, 0, evens) == 30
+  end
+
+  test "Ex1.34" do
+    assert_raise BadFunctionError, &Ex134.infinity/0
+  end
 end
