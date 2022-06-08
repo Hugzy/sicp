@@ -1,8 +1,12 @@
 defmodule Ex135 do
-  @tolerance 0.00001
+  @t1 0.00001
+
+  def main() do
+    Ex135.fixed_point(fn x -> :math.log(1000)/:math.log(x) end, 5)
+  end
 
   def fixed_point(f, guess) do
-
+    try_guess(f, guess)
   end
 
   defp try_guess(f, guess) do
@@ -15,6 +19,6 @@ defmodule Ex135 do
   end
 
   defp close_enough(x,y) do
-    (abs((x-y))) < @tolerance
+    (abs((x-y))) < @t1
   end
 end

@@ -45,4 +45,13 @@ defmodule Chapter1 do
   test "Ex1.34" do
     assert_raise BadFunctionError, &Ex134.infinity/0
   end
+
+  test "Ex1.35" do
+    assert_in_delta Ex135.fixed_point(&:math.cos/1, 1), 0.739, 0.0001
+    assert_in_delta Ex135.fixed_point(fn x -> 1 + 1/x end, 1), 1.618, 0.0001
+  end
+
+  test "Ex1.36" do
+    assert_in_delta Ex135.fixed_point(fn x -> :math.log(1000) / :math.log(x) end, 2), 4.5555, 0.0001
+  end
 end
