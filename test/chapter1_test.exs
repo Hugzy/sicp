@@ -54,4 +54,13 @@ defmodule Chapter1 do
   test "Ex1.36" do
     assert_in_delta Ex135.fixed_point(fn x -> :math.log(1000) / :math.log(x) end, 2), 4.5555, 0.0001
   end
+
+  test "Ex1.37" do
+    assert_in_delta Ex137.cont_frac(fn _i -> 1.0 end, fn _i -> 1.0 end, 11, 0), 0.6180, 0.0001
+  end
+
+  test "Ex1.38" do
+    assert_in_delta Ex138.e_euler(10), :math.exp(1), 0.0001
+  end
+
 end
