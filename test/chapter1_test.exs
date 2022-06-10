@@ -63,4 +63,7 @@ defmodule Chapter1 do
     assert_in_delta Ex138.e_euler(10), :math.exp(1), 0.0001
   end
 
+  test "Ex1.39" do
+    assert_in_delta Ex139.tan_cf(1, 100), 1.5574, 0.0001
+  end
 end

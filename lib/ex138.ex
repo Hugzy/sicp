@@ -11,6 +11,6 @@ defmodule Ex138 do
   end
 
   def e_euler(k) do
-    2 + Ex137.cont_frac(&Ex138.ni/1, &Ex138.di/1, 10, 0)
+    2 + Ex137.cont_frac(&Ex138.ni/1, &Ex138.di/1, k, 0)
   end
 end
