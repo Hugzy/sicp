@@ -66,4 +66,12 @@ defmodule Chapter1 do
   test "Ex1.39" do
     assert_in_delta Ex139.tan_cf(1, 100), 1.5574, 0.0001
   end
+
+  test "Ex1.40" do
+    #assert Ex140.sqrt(2) == 4
+  end
+
+  test "Ex1.42" do
+    assert Ex142.main(&(&1 * &1), &(&1 + 1), 6) == 49
+  end
 end
