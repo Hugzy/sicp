@@ -74,4 +74,8 @@ defmodule Chapter1 do
   test "Ex1.42" do
     assert Ex142.main(&(&1 * &1), &(&1 + 1), 6) == 49
   end
+
+  test "Ex1.43" do
+    assert Ex143.repeated(&(&1 * &1), 2, 5) == 625
+  end
 end
