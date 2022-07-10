@@ -47,8 +47,8 @@ defmodule Chapter1 do
   end
 
   test "Ex1.35" do
-    assert_in_delta Ex135.fixed_point(&:math.cos/1, 1), 0.739, 0.0001
     assert_in_delta Ex135.fixed_point(fn x -> 1 + 1/x end, 1), 1.618, 0.0001
+    assert_in_delta Ex135.fixed_point(&:math.cos/1, 1), 0.739, 0.0001
   end
 
   test "Ex1.36" do
@@ -67,8 +67,9 @@ defmodule Chapter1 do
     assert_in_delta Ex139.tan_cf(1, 100), 1.5574, 0.0001
   end
 
+  @tag :skip # TODO Runs infinitely, can't figure out why for now
   test "Ex1.40" do
-    #assert Ex140.sqrt(2) == 4
+    # assert Ex140.sqrt(2) == 4
   end
 
   test "Ex1.42" do
@@ -76,6 +77,11 @@ defmodule Chapter1 do
   end
 
   test "Ex1.43" do
-    assert Ex143.repeated(&(&1 * &1), 2, 5) == 625
+    assert Ex143.repeated(&Ex143.square/1, 2, "square").(5) == 625
+  end
+
+  test "Ex1.46" do
+    assert_in_delta Ex146.sqrt(25).(1), 5, 0.0001
+    assert_in_delta Ex146.fixed_point(&:math.cos/1, 1), 0.739, 0.0001
   end
 end
