@@ -82,7 +82,7 @@ defmodule Chapter1 do
 
   # Difficult to test so i just made an empty test
   test "Ex1.44" do
-    assert Ex143.repeated(&Ex143.square/1, 2, "square").(5) == 625
+    assert Ex143.repeated(&Ex143.square/1, 2).(5) == 625
   end
 
   test "Ex1.46" do

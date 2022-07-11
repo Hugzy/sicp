@@ -21,9 +21,6 @@ defmodule Ex146 do
 
   def iterative_improve(improve, test) do
     fn guess ->
-      IO.inspect(guess, label: "guess")
-      IO.inspect(test.(guess), label: "test")
-
       if test.(guess) do
         guess
       else
