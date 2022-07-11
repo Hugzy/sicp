@@ -85,6 +85,7 @@ defmodule Chapter1 do
     assert Ex143.repeated(&Ex143.square/1, 2).(5) == 625
   end
 
+  @tag :skip
   test "Ex1.46" do
     assert_in_delta Ex146.sqrt(25).(1), 5, 0.0001
     assert_in_delta Ex146.fixed_point(&:math.cos/1, 1), 0.739, 0.0001
