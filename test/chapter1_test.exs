@@ -76,6 +76,11 @@ defmodule Chapter1 do
   end
 
   test "Ex1.43" do
-    assert Ex143.repeated(&(&1 * &1), 2, 5) == 625
+    assert Ex143.repeated(&Ex143.square/1, 2).(5) == 625
+  end
+
+  # Difficult to test so i just made an empty test
+  test "Ex1.44" do
+    assert true == true
   end
 end
