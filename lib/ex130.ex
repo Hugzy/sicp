@@ -4,7 +4,6 @@ defmodule Ex130 do
     rec = sum(fn x -> x end, a, fn x -> x+1 end, b)
     iter = sum_iter(fn x -> x end, a, fn x -> x+1 end, b)
     [rec, iter]
-
   end
 
   def sum(a,b) do

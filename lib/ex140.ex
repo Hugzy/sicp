@@ -10,19 +10,15 @@ defmodule Ex140 do
   end
 
   def nm(g, guess) do
-    IO.inspect("nm")
-    IO.inspect(Ex135.fixed_point((newton_transform(g)), guess), label: "fixed point result: ")
+    Ex135.fixed_point((newton_transform(g)), guess)
   end
 
   def newton_transform(g) do
-    IO.inspect("newtons method")
     fn x -> (g.(x) / ((deriv(g)).(x))) - x end
   end
 
   def deriv(g) do
-    IO.inspect("deriv")
     fn x ->
-      IO.inspect("deriv.lambda")
       (g.((x + @dx)) - g.(x)) / @dx
     end
   end
