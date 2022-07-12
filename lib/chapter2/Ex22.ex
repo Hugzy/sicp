@@ -1,4 +1,4 @@
-defmodule Ex211 do
+defmodule Ex22 do
 
   def midpoint(segment) do
     x1 = IO.inspect(segment.x.car)

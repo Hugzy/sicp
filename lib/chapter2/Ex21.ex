@@ -1,4 +1,4 @@
-defmodule Ex210 do
+defmodule Ex21 do
   def print_rational(rational) do
     IO.puts("#{rational.car}/#{rational.cdr}")
   end
