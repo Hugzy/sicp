@@ -8,4 +8,11 @@ defmodule Chapter2 do
     assert Ex22.midpoint(line) == %Util.Pair{car: 0.5, cdr: -2}
   end
 
+  test "Ex2.8" do
+    a = %Util.Interval{car: 3, cdr: 6}
+    b = %Util.Interval{car: 4, cdr: 8}
+
+    assert Chapter2.Ex27.sub_interval(a,b) == %Util.Interval{car: -5, cdr: 2}
+  end
+
 end
