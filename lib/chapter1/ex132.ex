@@ -8,6 +8,7 @@ defmodule Ex132 do
   def sum_iter(a,b), do: accumulate_iter(a, b,fn x -> x+1 end, fn x,y -> x + y end, 0)
   def product_iter(a,b), do: accumulate_iter(a, b, fn x -> x+1 end, fn x,y -> x * y end, 1)
   def sum_rec(a,b), do: accumulate_rec(a, b, 0, fn x -> x+1 end, fn x,y -> x + y end)
+  @spec product_rec(any, any) :: any
   def product_rec(a,b), do: accumulate_rec(a, b, 1, fn x -> x+1 end, fn x,y -> x * y end)
 
   def accumulate(a,b) do

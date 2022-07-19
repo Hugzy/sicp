@@ -8,6 +8,12 @@ defmodule Chapter2 do
     assert Ex22.midpoint(line) == %Util.Pair{car: 0.5, cdr: -2}
   end
 
+  test "Ex2.7 add" do
+    (i1, i2) = IntervalHelpers.new()
+
+
+  end
+
   test "Ex2.8" do
     a = %Util.Interval{car: 3, cdr: 6}
     b = %Util.Interval{car: 4, cdr: 8}
