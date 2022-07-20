@@ -5,5 +5,4 @@ defmodule Ex29 do
 
     (upper-lower)/2
   end
-
 end

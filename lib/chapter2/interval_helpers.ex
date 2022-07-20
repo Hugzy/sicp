@@ -4,11 +4,12 @@ defmodule IntervalHelpers do
       car: x,
       cdr: y
     }
+
     i2 = %Util.Interval{
       car: x1,
       cdr: y1
     }
 
-   {i1, i2}
+    %{:first => i1, :second => i2}
   end
 end
