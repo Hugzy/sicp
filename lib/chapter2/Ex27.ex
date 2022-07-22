@@ -1,6 +1,5 @@
 defmodule Ex27 do
 
-  @spec upper_bound(%{:car => any, :cdr => any}) :: any
   def upper_bound(interval) do
     max(interval.car, interval.cdr)
   end
