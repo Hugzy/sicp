@@ -1,4 +1,4 @@
-defmodule Chapter2.Ex23 do
+defmodule Ex23 do
   def perimeter() do
   end
 

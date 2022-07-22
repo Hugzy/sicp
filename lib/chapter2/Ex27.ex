@@ -1,4 +1,4 @@
-defmodule Chapter2.Ex27 do
+defmodule Ex27 do
 
   @spec upper_bound(%{:car => any, :cdr => any}) :: any
   def upper_bound(interval) do
@@ -46,7 +46,6 @@ defmodule Chapter2.Ex27 do
   def div_intervald(x,y) do
     lower_y = 1 / upper_bound(y)
     upper_y = 1 / lower_bound(y)
-
     mul_interval(x, make_interval(lower_y, upper_y))
   end
 end

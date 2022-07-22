@@ -5,4 +5,9 @@ defmodule Ex29 do
 
     (upper-lower)/2
   end
+
+  def width_of_two(i1, i2, operator) do
+    result = operator.(i1, i2)
+    width(result)
+  end
 end

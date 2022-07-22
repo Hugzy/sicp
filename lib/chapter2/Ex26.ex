@@ -1,4 +1,4 @@
-defmodule Chapter2.Ex26 do
+defmodule Ex26 do
   def zero do
     fn _f -> fn x -> x end end
   end
@@ -28,6 +28,6 @@ defmodule Chapter2.Ex26 do
   end
 
   def add(x,y) do
-      
+
   end
 end
