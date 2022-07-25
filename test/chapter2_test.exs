@@ -55,4 +55,8 @@ defmodule Chapter2 do
     assert_raise ArgumentError, fn -> Ex210.div_interval(x, y1) end
     assert_raise ArgumentError, fn -> Ex210.div_interval(x, y2) end
   end
+
+  test "Ex2.11" do
+
+  end
 end
