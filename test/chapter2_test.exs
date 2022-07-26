@@ -57,6 +57,16 @@ defmodule Chapter2 do
   end
 
   test "Ex2.11" do
+    %{first: i1, second: i2} = IntervalHelpers.new(-1)
+    Ex211.fast_mult(i1, i2) == %Util.Interval{car: -8, cdr: 56}
 
+
+    %{first: i1, second: i2} = IntervalHelpers.new(3,7,-1)
+    Ex211.fast_mult(i1, i2) == %Util.Interval{car: -8, cdr: 56}
+  end
+
+  test "Ex2.12" do
+    assert Ex212.make_center_percent(6, 50) == Ex27.make_interval(3,9)
+    assert Ex212.percent(Ex27.make_interval(3,9)) == 50
   end
 end
