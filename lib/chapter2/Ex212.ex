@@ -5,7 +5,7 @@ defmodule Ex212 do
 
   def make_center_percent(midpoint, percent) do
     p = percent_to_dec(percent)
-    lower_interval = midpoint * p
+    lower_interval = midpoint * (1 - p)
     upper_interval = midpoint * (1 + p)
 
     Ex27.make_interval(lower_interval, upper_interval)
