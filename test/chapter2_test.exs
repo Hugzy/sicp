@@ -67,6 +67,6 @@ defmodule Chapter2 do
 
   test "Ex2.12" do
     assert Ex212.make_center_percent(6, 50) == Ex27.make_interval(3,9)
-    assert Ex212.percent(Ex27.make_interval(3,9)) == 50
+    assert Ex212.percent(Ex27.make_interval(3, 9)) == 50
   end
 end

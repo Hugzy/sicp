@@ -12,15 +12,12 @@ defmodule Ex212 do
   end
 
   def center(i) do
-    Ex27.lower_bound(i) + Ex27.upper_bound(i) / 2
+    (Ex27.lower_bound(i) + Ex27.upper_bound(i)) / 2
   end
 
-  def percent(%Util.Interval{car: lower_interval, cdr: _} = i) do
-
-    # lower_interval/p = (midpoint * p)/p
-    # lower_interval/p = midpoint
-    # lower_interval/p = midpoint * lower_interval
-    midpoint = center(i)
-    midpoint * lower_interval * 100
+  def percent(%Util.Interval{car: lower, cdr: upper} = i) do
+    center = center(i)
+    diff = (upper - center(i))
+    (diff / center) * 100
   end
 end
