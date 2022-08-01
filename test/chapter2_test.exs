@@ -43,7 +43,7 @@ defmodule Chapter2 do
     assert Ex29.width_of_two(a,b,&Ex27.add_interval/2) == oracle
 
     oracle1 = Ex29.width((Ex27.mul_interval(a,b)))
-    assert Ex29.width_of_two(a,b,&Ex27.mul_interval/2) != oracle
+    assert Ex29.width_of_two(a,b,&Ex27.mul_interval/2) == oracle1
   end
 
   test "Ex2.210" do
@@ -56,13 +56,14 @@ defmodule Chapter2 do
     assert_raise ArgumentError, fn -> Ex210.div_interval(x, y2) end
   end
 
+  @tag :skip
   test "Ex2.11" do
     %{first: i1, second: i2} = IntervalHelpers.new(-1)
-    Ex211.fast_mult(i1, i2) == %Util.Interval{car: -8, cdr: 56}
+    assert Ex211.fast_mult(i1, i2) == %Util.Interval{car: -8, cdr: 56}
 
 
     %{first: i1, second: i2} = IntervalHelpers.new(3,7,-1)
-    Ex211.fast_mult(i1, i2) == %Util.Interval{car: -8, cdr: 56}
+    assert Ex211.fast_mult(i1, i2) == %Util.Interval{car: -8, cdr: 56}
   end
 
   test "Ex2.12" do
@@ -72,5 +73,23 @@ defmodule Chapter2 do
 
   test "Ex2.13" do
 
+  end
+
+  test "Ex217" do
+    list = [1,2,3,4]
+    assert Ex217.last_pair(list) == 4
+  end
+
+  test "Ex218" do
+    list = [1,2,3,4]
+    assert Ex218.reverse(list) == [4,3,2,1]
+  end
+
+  test "Ex219 cc" do
+    assert Ex219.count_change(100) == 292
+  end
+
+  test "Ex219" do
+    assert Ex219.cc_list(100, [50, 25, 10, 5, 1]) == 292
   end
 end
