@@ -92,4 +92,9 @@ defmodule Chapter2 do
   test "Ex219" do
     assert Ex219.cc_list(100, [50, 25, 10, 5, 1]) == 292
   end
+
+  test "Ex220" do
+    assert Ex220.same_parity([1,2,3,4,5,6,7]) == [1,3,5,7]
+    assert Ex220.same_parity([2,3,4,5,6,7]) == [2,4,6]
+  end
 end
