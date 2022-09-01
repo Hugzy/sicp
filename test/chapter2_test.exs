@@ -199,12 +199,18 @@ defmodule Chapter2 do
   end
 
   test "Ex230" do
-
-
     tree = [1, [[2, [[3, 4], 5]], [6, 7]]]
 
     result = [1, [[4, [[9, 16], 25]], [36, 49]]]
 
     assert Ex230.square_tree(tree) == result
+  end
+
+  test "Ex231" do
+    tree = [1, [[2, [[3, 4], 5]], [6, 7]]]
+
+    result = [1, [[4, [[9, 16], 25]], [36, 49]]]
+
+    assert Ex231.square_tree(tree) == result
   end
 end
