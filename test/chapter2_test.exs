@@ -199,13 +199,6 @@ defmodule Chapter2 do
   end
 
   test "Ex230" do
-<<<<<<< HEAD
-    tree = [1, [2, [3, 4], 5], [6, 7]]
-    result = [1, [4, [9, 16], 25], [36, 49]]
-
-    assert Ex230.square_tree(tree) == result
-  end
-=======
     tree = [1, [[2, [[3, 4], 5]], [6, 7]]]
 
     result = [1, [[4, [[9, 16], 25]], [36, 49]]]
@@ -220,5 +213,8 @@ defmodule Chapter2 do
 
     assert Ex231.square_tree(tree) == result
   end
->>>>>>> 0ef3455cc1c6ca0b760b9af8c6cd699ccd99850a
+
+  test "Ex232" do
+    IO.inspect(Ex232.subsets([1,2,3]))
+  end
 end
