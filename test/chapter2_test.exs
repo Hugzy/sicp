@@ -98,6 +98,22 @@ defmodule Chapter2 do
     assert Ex220.same_parity([2, 3, 4, 5, 6, 7]) == [2, 4, 6]
   end
 
+  test "Ex221" do
+    list = [1,2,3,4]
+    result = %Util.Pair{
+              car: 1,
+              cdr: %Util.Pair{
+                car: 4,
+                cdr: %Util.Pair{
+                  car: 9,
+                  cdr: %Util.Pair{car: 16, cdr: []}
+                }
+              }
+            }
+
+    assert Ex221.square_list(list, :cons) == result
+  end
+
   test "Ex227" do
     assert Ex227.deep_reverse([[1, 2], [3, 4]]) == [[4, 3], [2, 1]]
   end
@@ -183,9 +199,26 @@ defmodule Chapter2 do
   end
 
   test "Ex230" do
+<<<<<<< HEAD
     tree = [1, [2, [3, 4], 5], [6, 7]]
     result = [1, [4, [9, 16], 25], [36, 49]]
 
     assert Ex230.square_tree(tree) == result
   end
+=======
+    tree = [1, [[2, [[3, 4], 5]], [6, 7]]]
+
+    result = [1, [[4, [[9, 16], 25]], [36, 49]]]
+
+    assert Ex230.square_tree(tree) == result
+  end
+
+  test "Ex231" do
+    tree = [1, [[2, [[3, 4], 5]], [6, 7]]]
+
+    result = [1, [[4, [[9, 16], 25]], [36, 49]]]
+
+    assert Ex231.square_tree(tree) == result
+  end
+>>>>>>> 0ef3455cc1c6ca0b760b9af8c6cd699ccd99850a
 end
