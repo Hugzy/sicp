@@ -134,11 +134,11 @@ defmodule Chapter2 do
 
   test "Ex229.c" do
     import Ex229
- #          4  |  5
- #        +----+-----+
- #        6        3 |     9
- #               +---+---------+
- #               7             8
+    #          4  |  5
+    #        +----+-----+
+    #        6        3 |     9
+    #               +---+---------+
+    #               7             8
     m1 =
       make_mobile(
         make_branch(4, 6),
@@ -153,11 +153,11 @@ defmodule Chapter2 do
 
     assert is_balanced(m1) == false
 
-  #         4   |  2
-  #        +----+--+
-  #        6    5  |    10
-  #          +-----+----------+
-  #          8                4
+    #         4   |  2
+    #        +----+--+
+    #        6    5  |    10
+    #          +-----+----------+
+    #          8                4
 
     m2 =
       make_mobile(
@@ -180,5 +180,12 @@ defmodule Chapter2 do
     # at using the left and right selector from the beginning rather than the '|' operator. I suspect there would have to be some major changes
     # to the total_weight function which i might go back and fix later on
     assert true == true
+  end
+
+  test "Ex230" do
+    tree = [1, [2, [3, 4], 5], [6, 7]]
+    result = [1, [4, [9, 16], 25], [36, 49]]
+
+    assert Ex230.square_tree(tree) == result
   end
 end
