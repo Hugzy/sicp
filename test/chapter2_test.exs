@@ -99,17 +99,18 @@ defmodule Chapter2 do
   end
 
   test "Ex221" do
-    list = [1,2,3,4]
+    list = [1, 2, 3, 4]
+
     result = %Util.Pair{
-              car: 1,
-              cdr: %Util.Pair{
-                car: 4,
-                cdr: %Util.Pair{
-                  car: 9,
-                  cdr: %Util.Pair{car: 16, cdr: []}
-                }
-              }
-            }
+      car: 1,
+      cdr: %Util.Pair{
+        car: 4,
+        cdr: %Util.Pair{
+          car: 9,
+          cdr: %Util.Pair{car: 16, cdr: []}
+        }
+      }
+    }
 
     assert Ex221.square_list(list, :cons) == result
   end
@@ -215,6 +216,7 @@ defmodule Chapter2 do
   end
 
   test "Ex232" do
-    IO.inspect(Ex232.subsets([1,2,3]))
+    result = [[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]
+    assert Ex232.subsets([1, 2, 3]) == result
   end
 end

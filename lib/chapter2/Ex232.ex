@@ -7,9 +7,12 @@ defmodule Ex232 do
     []
   end
 
-  def subsets(s) do
-    [h | t] = s
-    [h, subsets(t)]
+  def subsets([h | t]) do
+    IO.inspect(h, label: "h")
+    IO.inspect(t, label: "t")
+    rest = subsets(t)
+    IO.inspect(rest, label: "rest")
+    return = rest ++ Enum.map(rest, fn x -> [h, x] end)
+    IO.inspect(return, label: "return")
   end
-
 end
