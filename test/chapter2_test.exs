@@ -215,8 +215,29 @@ defmodule Chapter2 do
     assert Ex231.square_tree(tree) == result
   end
 
+  @tag :skip
   test "Ex232" do
     result = [[], [3], [2], [2, 3], [1], [1, 3], [1, 2], [1, 2, 3]]
     assert Ex232.subsets([1, 2, 3]) == result
+  end
+
+  test "Ex233" do
+    import Functions
+    test = [1,2,3,4,5]
+
+    result = [1,4,9,16,25]
+    assert Ex233.map(&product/1, test) == result
+
+    result = test ++ test
+    assert Ex233.append(test, test) == result
+
+    result = 5
+    assert Ex233.length(test) == result
+  end
+
+  test "Ex234" do
+    assert Ex234.horner_eval(2, [1,3,0,5,0,1]) == 79
+    # IO.inspect(Ex234.horner_eval(2, [1,3,0,5,0,1]))
+    assert Ex234.horner_eval(2, [2,3,0,5,0,2]) == 112
   end
 end
