@@ -240,4 +240,9 @@ defmodule Chapter2 do
     # IO.inspect(Ex234.horner_eval(2, [1,3,0,5,0,1]))
     assert Ex234.horner_eval(2, [2,3,0,5,0,2]) == 112
   end
+
+  test "Ex235" do
+    test = [[1,2], [3,4]] # 4 leaves
+    assert Ex235.count_leaves_acc(test) == 4
+  end
 end
