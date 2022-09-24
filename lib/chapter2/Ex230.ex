@@ -11,8 +11,8 @@ defmodule Ex230 do
   def square_tree_1([h | t]) do
     [square_tree(h) ++ square_tree(t)] |>
     Enum.reject(&is_nil/1)
-
   end
+
   def square_tree(n) when is_number(n) do
     n*n
   end
