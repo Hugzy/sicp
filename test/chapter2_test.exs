@@ -245,4 +245,9 @@ defmodule Chapter2 do
     test = [[1,2], [3,4]] # 4 leaves
     assert Ex235.count_leaves_acc(test) == 4
   end
+
+  test "Ex236" do
+    test = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]
+    assert Ex236.accumulate_n(&+/2, 0, test) == [22,26,30]
+  end
 end
