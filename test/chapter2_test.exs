@@ -248,6 +248,10 @@ defmodule Chapter2 do
 
   test "Ex236" do
     test = [[1,2,3], [4,5,6], [7,8,9], [10,11,12]]
+
+    assert Ex236.select_heads(test) == [1,4,7,10]
+    assert Ex236.select_tails(test) == [[2,3], [5,6], [8,9], [11,12]]
+
     assert Ex236.accumulate_n(&+/2, 0, test) == [22,26,30]
   end
 end

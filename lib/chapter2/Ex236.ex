@@ -1,10 +1,7 @@
 defmodule Ex236 do
 
-  def select_heads([]) do
-    []
-  end
-
   def select_heads(seq) do
+    IO.inspect(seq, label: "seq")
     seq |>
       Enum.map(fn [h | _] -> h end)
   end
@@ -19,7 +16,9 @@ defmodule Ex236 do
   end
 
   def accumulate_n(op, init, seqs) do
+    IO.inspect(seqs, label: "seqs")
     head = Enum.reduce(select_heads(seqs), init, op)
+    IO.inspect(head, label: "head")
     head ++ accumulate_n(op, init, select_tails(seqs))
   end
 end
