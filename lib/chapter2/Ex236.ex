@@ -1,5 +1,4 @@
 defmodule Ex236 do
-
   def select_heads(seq) do
     IO.inspect(seq, label: "seq")
     seq |>
@@ -11,14 +10,14 @@ defmodule Ex236 do
     # List.flatten()
   end
 
-  def accumulate_n(_op, _init, []) do
-    []
-  end
-
   def accumulate_n(op, init, seqs) do
-    IO.inspect(seqs, label: "seqs")
-    head = Enum.reduce(select_heads(seqs), init, op)
-    IO.inspect(head, label: "head")
-    head ++ accumulate_n(op, init, select_tails(seqs))
+    if hd(seqs) == [] do
+      []
+    else
+      IO.inspect(seqs, label: "seqs")
+      head = Enum.reduce(select_heads(seqs), init, op)
+      IO.inspect(head, label: "head")
+      [head | accumulate_n(op, init, select_tails(seqs))]
+    end
   end
 end
