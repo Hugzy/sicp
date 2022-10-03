@@ -254,4 +254,10 @@ defmodule Chapter2 do
 
     assert Ex236.accumulate_n(&+/2, 0, test) == [22,26,30]
   end
+
+  test "Ex237" do
+    test = [[1,2,3], [40, 50, 60], [700, 800, 900]]
+
+    assert Ex237.map(&+/2, test) == [741, 852, 963]
+  end
 end
