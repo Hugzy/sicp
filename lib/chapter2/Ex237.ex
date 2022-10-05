@@ -29,7 +29,7 @@ defmodule Ex237 do
   end
 
   def transpose(mat) do
-
+    Ex236.accumulate_n([], [], mat)
   end
 
   def matrix_mul_matrix do
