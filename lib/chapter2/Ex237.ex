@@ -15,12 +15,14 @@ defmodule Ex237 do
       []
     else
     head = Enum.reduce(select_heads(seqs), op)
-    [head | map(op, select_tails(seqs))]
+    IO.inspect([head | map(op, select_tails(seqs))], label: "map")
     end
   end
 
   def dot_product(v, w) do
-    Enum.reduce(&+/2, 0, map(&*/2, [v, w]))
+    IO.inspect(v, label: "v")
+    IO.inspect(w, label: "w")
+    Enum.reduce(map(&*/2, [v, w]), 0 , &+/2)
   end
 
   def matrix_mul_vector(m, v) do
