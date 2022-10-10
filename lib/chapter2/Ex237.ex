@@ -27,7 +27,7 @@ defmodule Ex237 do
   end
 
   def matrix_mul_vector(m, v) do
-    IO.inspect(Enum.map(m, fn mi -> dot_product(mi, v) end), label: "mul")
+    Enum.map(m, fn mi -> dot_product(mi, v) end)
   end
 
   def cons(elem, init) do
@@ -39,6 +39,12 @@ defmodule Ex237 do
   end
 
   def matrix_mul_matrix(m, n) do
-
+    tn = transpose(n)
+    result = Enum.map(m, fn mi ->
+      Enum.map(tn, fn tni ->
+        dot_product(mi, tni)
+      end)
+    end)
+    result
   end
 end
