@@ -1,7 +1,6 @@
 #´Need to finish Ex236 first
 defmodule Ex237 do
   def select_heads(seq) do
-    IO.inspect(seq, label: "seq")
     seq |>
       Enum.map(fn [h | _] -> h end)
   end
@@ -15,21 +14,23 @@ defmodule Ex237 do
       []
     else
     head = Enum.reduce(select_heads(seqs), op)
-    IO.inspect([head | map(op, select_tails(seqs))], label: "map")
+    [head | map(op, select_tails(seqs))]
     end
   end
 
   def dot_product(v, w) do
-    IO.inspect(v, label: "v")
-    IO.inspect(w, label: "w")
     Enum.reduce(map(&*/2, [v, w]), 0 , &+/2)
   end
 
   def matrix_mul_vector(m, v) do
   end
 
+  def cons(elem, init) do
+    init ++ [elem]
+  end
+
   def transpose(mat) do
-    Ex236.accumulate_n([], [], mat)
+    Ex236.accumulate_n(&cons/2, [], mat)
   end
 
   def matrix_mul_matrix do
