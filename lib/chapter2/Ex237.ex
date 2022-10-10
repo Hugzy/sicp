@@ -1,5 +1,9 @@
 #´Need to finish Ex236 first
 defmodule Ex237 do
+
+  def select_heads([]) do
+    []
+  end
   def select_heads(seq) do
     seq |>
       Enum.map(fn [h | _] -> h end)
@@ -23,6 +27,7 @@ defmodule Ex237 do
   end
 
   def matrix_mul_vector(m, v) do
+    IO.inspect(Enum.map(m, fn mi -> dot_product(mi, v) end), label: "mul")
   end
 
   def cons(elem, init) do
@@ -33,7 +38,7 @@ defmodule Ex237 do
     Ex236.accumulate_n(&cons/2, [], mat)
   end
 
-  def matrix_mul_matrix do
+  def matrix_mul_matrix(m, n) do
 
   end
 end

@@ -262,6 +262,12 @@ defmodule Chapter2 do
     assert Ex237.map(&+/2, matrix) == [11, 14, 17, 19]
     assert Ex237.dot_product(hd(matrix), hd(tl(matrix))) == 56
     assert Ex237.transpose(matrix) == [[1,4,6], [2,5,7], [3,6,8], [4,6,9]]
+    assert Ex237.matrix_mul_vector(matrix, hd(matrix)) == [30, 56, 80]
+  end
 
+  test "Ex238" do
+    list = [1,2,3]
+
+    assert Ex238.fold_left(&//2, 1, list)
   end
 end
