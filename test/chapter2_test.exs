@@ -257,11 +257,9 @@ defmodule Chapter2 do
 
   test "Ex237" do
     matrix = [[1,2,3,4], [4,5,6,6], [6,7,8,9]]
-    vector = [1,2,3]
-    # assert Ex237.map(&+/2, matrix) == [11, 14, 17, 19]
-
+    assert Ex237.map(&+/2, matrix) == [11, 14, 17, 19]
     assert Ex237.dot_product(hd(matrix), hd(tl(matrix))) == 56
-
-
+    assert Ex237.matrix_mul_vector(matrix, hd(matrix)) == [30, 56, 80]
+    asert Ex237.transpose(matrix)
   end
 end
