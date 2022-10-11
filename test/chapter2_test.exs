@@ -269,6 +269,7 @@ defmodule Chapter2 do
   test "Ex238" do
     list = [1,2,3]
 
-    IO.inspect(Ex238.fold_left(&//2, 1, list))
+    # assert_in_delta Ex238.fold_right(&//2, 1, list), 1.5, 0.1
+    assert_in_delta Ex238.fold_left(&//2, 1, list), (1/6), 0.1
   end
 end
