@@ -1,9 +1,9 @@
 defmodule Ex239 do
   def reverse(:foldr, sequence) do
-    Ex238.fold_right(fn x,y -> [x,y] end, [], sequence)
+    Ex238.fold_right(fn x,y -> y ++ [x] end, [], sequence)
   end
 
   def reverse(:foldl, sequence) do
-    :nil
+    Ex238.fold_left(fn x,y -> [y | x] end, [], sequence)
   end
 end
