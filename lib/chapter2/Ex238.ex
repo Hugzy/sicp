@@ -1,17 +1,21 @@
 defmodule Ex238 do
-  def fold_right(_op, result, []) do
+  def fold_right(op, result, []) do
     result
   end
 
   def fold_right(op, initial, [h | t]) do
-
+    op.(h, fold_right(op, initial, t))
   end
 
-  def fold_left(_op, result, []) do
-    result
+  def dbg(x, acc) do
+    IO.inspect(acc / x, label: "dbg #{x} / #{acc}")
   end
 
-  def fold_left(op, initial, [h | t]) do
-    IO.inspect(fold_left(op, (op.(initial, h)), t),label: "fold left")
+  def fold_left(_op, acc, []) do
+    acc
+  end
+
+  def fold_left(op, acc, [h | t]) do
+    fold_left(op, op.(acc, h), t)
   end
 end
