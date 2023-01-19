@@ -278,4 +278,27 @@ defmodule Chapter2 do
     assert Ex239.reverse(:foldr, list) == [3,2,1]
     assert Ex239.reverse(:foldl, list) == [3,2,1]
   end
+
+  test "Ex240" do
+    assert Ex240.unique_pairs(6) == [
+              [2, 1],
+              [3, 1],
+              [3, 2],
+              [4, 1],
+              [4, 2],
+              [4, 3],
+              [5, 1],
+              [5, 2],
+              [5, 3],
+              [5, 4],
+              [6, 1],
+              [6, 2],
+              [6, 3],
+              [6, 4],
+              [6, 5]
+            ]
+
+    assert Ex240.prime_sum_pairs(6) == [[2,1,3], [3,2,5], [4,1,5], [4,3,7],[5,2,7],[6,1,7],[6,5,11]]
+
+  end
 end

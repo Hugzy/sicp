@@ -8,6 +8,10 @@ defmodule Ex27 do
     min(interval.car, interval.cdr)
   end
 
+  @spec sub_interval(
+          atom | %{:car => any, :cdr => any, optional(any) => any},
+          atom | %{:car => any, :cdr => any, optional(any) => any}
+        ) :: %Util.Interval{car: number, cdr: number}
   def sub_interval(x, y) do
     car = lower_bound(x) - upper_bound(y)
     cdr = upper_bound(x) - lower_bound(y)
