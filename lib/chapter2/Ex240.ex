@@ -33,7 +33,7 @@ defmodule Ex240 do
   def prime_sum_pairs(n) do
     unique_pairs(n) |>
     Enum.filter(fn x -> prime?(x) end) |>
-    Enum.map(fn [i,j] -> [i, j, i+j] end) |>
+    Enum.map(fn [i,j] -> [i, j, i+j] end)
   end
 
   def map_j(i, j) when i > j do
