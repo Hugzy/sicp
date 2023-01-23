@@ -299,6 +299,5 @@ defmodule Chapter2 do
             ]
 
     assert Ex240.prime_sum_pairs(6) == [[2,1,3], [3,2,5], [4,1,5], [4,3,7],[5,2,7],[6,1,7],[6,5,11]]
-
   end
 end
