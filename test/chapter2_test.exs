@@ -300,4 +300,10 @@ defmodule Chapter2 do
 
     assert Ex240.prime_sum_pairs(6) == [[2,1,3], [3,2,5], [4,1,5], [4,3,7],[5,2,7],[6,1,7],[6,5,11]]
   end
+
+  test "Ex241" do
+    sums = [[5, 4, 3], [6, 4, 2], [6, 5, 1], [7, 3, 2], [7, 4, 1], [8, 3, 1], [9, 2, 1]]
+
+    assert Ex241.triplets(15, 12) == sums
+  end
 end
